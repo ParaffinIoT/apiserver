@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ParsePlatform/parse-server-example"
+    "url": "https://github.com/ParaffinIoT/apiserver"
   },
   "license": "MIT",
   "dependencies": {

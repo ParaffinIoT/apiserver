@@ -5,7 +5,7 @@ Parse.Cloud.define('hello', function (request, response) {
 });
 
 
-Parse.Cloud.define("auth", function (request, response) {
+Parse.Cloud.define('auth', function (request, response) {
 
     // the params passed through the start request
     const params = request.params;
@@ -14,16 +14,19 @@ Parse.Cloud.define("auth", function (request, response) {
     // get the parse-server logger
     const log = request.log;
     const isMaster = request.master; // if the function is run with masterKey
-/*
-    console.log("Request:");
-    console.log(request);
-    console.log("headers:");
-    console.log(JSON.stringify(headers));
-    console.log("params:");
-    console.log(JSON.stringify(params));
-    console.log("logs:");
-    console.log(JSON.stringify(log));
-*/
+    /*
+        console.log("Request:");
+        console.log(request);
+        console.log("headers:");
+        console.log(JSON.stringify(headers));
+        console.log("params:");
+        console.log(JSON.stringify(params));
+        console.log("logs:");
+        console.log(JSON.stringify(log));
+    */
+    var username = '';
+    var password = '';
+
     if (!isMaster) {
         response.error("Request hasnot MasterKey.");
     }
@@ -35,21 +38,34 @@ Parse.Cloud.define("auth", function (request, response) {
     query.find()
         .then((results) => {
 
+            console.log(results);
             if (results.length != 1) {
                 response.error("clientId lookup failed");
             }
             password = results[0].get("password");
             username = results[0].get("username");
-            console.log("username: " + username);
-            if (username == params.username && password == params.password) {
-                var r = {
-                    authenticated: true,
-                    profile: {topics: [username]}
-                }
-                response.success(r);
-            }
+            console.log(">username: " + username);
+            console.log(">password: " + password);
+            response.success();
         })
         .catch(() => {
             response.error("Device lookup failed");
         });
+
+    console.log(">>username: " + params.username);
+    console.log(">>password: " + params.password);
+    
+    if (1) {
+        var r = {
+            authenticated: true,
+            profile: {
+                topics: [username]
+            }
+        }
+        console.log("Auth Passed!");
+        response.success();
+        //response.success(r);
+    }
+
+    //response.error("Auth reject!");
 });

@@ -120,6 +120,13 @@ app.get('/test', function (req, res) {
 var port = process.env.API_SERVER_PORT || 1337;
 var httpServer = require('http').createServer(app);
 httpServer.listen(port, function () {
+  console.log('  ######\n\
+  #     #   ##   #####    ##   ###### ###### # #    # \n\
+  #     #  #  #  #    #  #  #  #      #      # ##   # \n\
+  ######  #    # #    # #    # #####  #####  # # #  # \n\
+  #       ###### #####  ###### #      #      # #  # # \n\
+  #       #    # #   #  #    # #      #      # #   ## \n\
+  #       #    # #    # #    # #      #      # #    #');
   console.log('Paraffin API Server is running on port ' + port + '.');
 });
 

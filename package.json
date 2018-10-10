@@ -18,7 +18,7 @@
     "parse-server": "3.0.0"
   },
   "scripts": {
-    "start": "PROCESS_TYPE=parser-server node index.js",
+    "start": "node index.js",
     "prettier": "prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write './{,!(node_modules)/**}/*.js'",
     "prepush": "npm run prettier"
   },

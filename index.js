@@ -118,6 +118,9 @@ app.get('/test', function(req, res) {
   res.sendFile(path.join(__dirname, '/public/test.html'))
 })
 
+// Serve the Parse API on the /parse URL prefix
+app.use('/api', api);
+
 const port = config('PORT')
 const httpServer = require('http').createServer(app)
 httpServer.listen(port, function() {

@@ -12,7 +12,7 @@ Read the full Parse Server [guide](https://github.com/ParsePlatform/parse-server
 * `npm install`
 * Install mongo locally using [how to install mongodb on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-18-04) and [MongoDB Doc](https://docs.mongodb.com/manual/administration/install-community/)
 * Run `mongo` to connect to your database, just to make sure it's working. Once you see a mongo prompt, exit with Control-D
-* Run the server with: `npm start`
+* Run the server with `npm start`
 * By default it will use a path of /api for the API routes. It can be changed in .env file
 * By defualt you now have a database named "paraffin" that contains your Parse data
 

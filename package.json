@@ -9,16 +9,23 @@
   },
   "license": "MIT",
   "dependencies": {
-    "express": "~4.11.x",
-    "kerberos": "~0.0.x",
-    "parse": "~1.8.0",
-    "parse-dashboard": "^1.2.0",
-    "parse-server": "*"
+    "dotenv": "6.1.0",
+    "express": "4.16.3",
+    "joi": "13.7.0",
+    "kerberos": "1.0.0",
+    "parse": "2.1.0",
+    "parse-dashboard": "1.2.0",
+    "parse-server": "3.0.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "PROCESS_TYPE=parser-server node index.js",
+    "prettier": "prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write './{,!(node_modules)/**}/*.js'",
+    "prepush": "npm run prettier"
   },
   "engines": {
     "node": ">=4.3"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.3"
   }
 }

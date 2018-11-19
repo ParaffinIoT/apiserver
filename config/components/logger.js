@@ -7,7 +7,7 @@ const envVarsSchema = joi
     LOG_LEVEL: joi
       .string()
       .valid(['error', 'warn', 'info', 'verbose', 'debug'])
-      .default('info'),
+      .default('info')
   })
   .unknown()
   .required()
@@ -19,7 +19,7 @@ if (error) {
 }
 
 const config = {
-  LOG_LEVEL: envVars.LOG_LEVEL,
+  LOG_LEVEL: envVars.LOG_LEVEL
 }
 
 module.exports = config

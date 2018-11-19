@@ -7,7 +7,7 @@ const envVarsSchema = joi
     DB_URL: joi
       .string()
       .regex(/^mongodb:\/\//)
-      .required(),
+      .required()
   })
   .unknown()
 
@@ -18,5 +18,5 @@ if (error) {
 }
 
 module.exports = {
-  DB_URL: env.DB_URL,
+  DB_URL: env.DB_URL
 }

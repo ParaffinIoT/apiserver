@@ -1,5 +1,5 @@
 'use strict'
-const Parse = require('parse')
+/* global Parse */
 
 const config = require('../config')
 const brokerIP = config('BROKER_IP')

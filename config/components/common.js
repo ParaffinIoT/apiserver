@@ -15,7 +15,7 @@ const envVarsSchema = joi
     APP_NAME: joi.string().required(),
     PUBLIC_SERVER_URL: joi.string().uri().required(),
     API_SERVER_URL: joi.string().required(),
-    PARSE_MOUNT:  joi.string().required(), //eslint disable 
+    PARSE_MOUNT: joi.string().required(), // eslint disable
     ALLOW_INSECURE_HTTP: joi.boolean().default(true),
     DASHBOARD_USER: joi.string().required(),
     DASHOBOARD_PASS: joi.string().required()

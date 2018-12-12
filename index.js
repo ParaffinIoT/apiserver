@@ -6,7 +6,7 @@ const ParseDashboard = require('parse-dashboard')
 const path = require('path')
 const config = require('./config')
 
-const allowInsecureHTTP = config('ALLOW_INSECURE_HTTP') 
+const allowInsecureHTTP = config('ALLOW_INSECURE_HTTP')
 
 /*
 const api = new ParseServer({
@@ -50,15 +50,14 @@ const api = new ParseServer({
 
 const parseSetting = {
   databaseURI: config('DB_URL'),
-  cloud: __dirname + config('CLOUD_CODE_MAIN'), // path for cloud code main.js
+  cloud: path.join(__dirname, config('CLOUD_CODE_MAIN')), // path for cloud code main.js
   appId: config('APP_ID'),
   javascriptKey: config('JAVASCRIPT_KEY'),
-  masterKey: config('MASTER_KEY'), //Add your master key here. Keep it secret!
-  //readOnlyMasterKey: process.env.READONLY_MASTER_KEY || 'READONLY_MASTER_KEY',
+  masterKey: config('MASTER_KEY'), // Add your master key here. Keep it secret!
+  // readOnlyMasterKey: process.env.READONLY_MASTER_KEY || 'READONLY_MASTER_KEY',
   collectionPrefix: config('COLLECTION_PREFIX'),
   clientKey: config('CLIENT_KEY'),
-  restAPIKey: config('REST_API_KEY') ,
-  javascriptKey: config('JAVASCRIPT_KEY'),
+  restAPIKey: config('REST_API_KEY'),
   dotNetKey: config('DOTNET_KEY'),
   fileKey: config('FILE_KEY'),
   appName: config('APP_NAME'),
@@ -66,8 +65,8 @@ const parseSetting = {
   logLevel: config('LOG_LEVEL'),
   serverURL: config('API_SERVER_URL'), // Don't forget to change to https if needed
   liveQuery: {
-    classNames: ['Device', 'IFTTT'], // List of classes to support for query subscriptions
-  },
+    classNames: ['Device', 'IFTTT'] // List of classes to support for query subscriptions
+  }
 }
 
 const api = new ParseServer(parseSetting)
@@ -82,15 +81,15 @@ const dashboard = new ParseDashboard(
         serverURL: parseSetting.serverURL,
         appId: parseSetting.appId,
         masterKey: parseSetting.masterKey,
-        appName: 'Paraffin Dashboard',
-      },
+        appName: 'Paraffin Dashboard'
+      }
     ],
     users: [
       {
         user: config('DASHBOARD_USER'),
-        pass: config('DASHOBOARD_PASS') ,
-      },
-    ],
+        pass: config('DASHOBOARD_PASS')
+      }
+    ]
   },
   allowInsecureHTTP
 )
@@ -108,22 +107,22 @@ app.use(mountPath, api)
 app.use('/dashboard', dashboard)
 
 // Parse Server plays nicely with the rest of your web routes
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   res.status(200).send('I dream of being an IoT website.')
 })
 
 // There will be a test page available on the /test path of your server url
 // Remove this before launching your app
-app.get('/test', function(req, res) {
+app.get('/test', function (req, res) {
   res.sendFile(path.join(__dirname, '/public/test.html'))
 })
 
 // Serve the Parse API on the /parse URL prefix
-app.use('/api', api);
+app.use('/api', api)
 
 const port = config('PORT')
 const httpServer = require('http').createServer(app)
-httpServer.listen(port, function() {
+httpServer.listen(port, function () {
   console.log('Paraffin API Server is running on port ' + port + '.')
 })
 

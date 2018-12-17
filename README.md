@@ -1,5 +1,7 @@
 # Paraffin API Server
 
+[![Build Status](https://travis-ci.com/ParaffinIoT/apiserver.svg?branch=ft-setup-travis-ci)](https://travis-ci.com/ParaffinIoT/apiserver)
+
 Paraffin api server using the [parse-server](https://github.com/ParsePlatform/parse-server) module on Express.
 
 Read the full Parse Server [guide](https://github.com/ParsePlatform/parse-server/wiki/Parse-Server-Guide)

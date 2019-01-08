@@ -1,4 +1,4 @@
-# Paraffin API Server
+# Paraffin API Server 
 
 [![Build Status](https://travis-ci.org/ParaffinIoT/apiserver.svg?branch=dev)](https://travis-ci.com/ParaffinIoT/apiserver)
 

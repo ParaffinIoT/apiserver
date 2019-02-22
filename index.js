@@ -1,10 +1,13 @@
-// Example express application adding the parse-server module to expose Parse
-// compatible API routes.
+
+'use strict'
+
 const express = require('express')
 const ParseServer = require('parse-server').ParseServer
 const ParseDashboard = require('parse-dashboard')
 const path = require('path')
+const morgan = require('morgan')
 const config = require('./config')
+const { log } = require('./lib/utils')
 
 const allowInsecureHTTP = config('ALLOW_INSECURE_HTTP')
 
@@ -119,11 +122,12 @@ app.get('/test', function (req, res) {
 
 // Serve the Parse API on the /parse URL prefix
 app.use('/api', api)
+  .use(morgan('combined'))
 
 const port = config('PORT')
 const httpServer = require('http').createServer(app)
 httpServer.listen(port, function () {
-  console.log('Paraffin API Server is running on port ' + port + '.')
+  log.info('Paraffin API Server is running on port ' + port + '.')
 })
 
 // This will enable the Live Query real-time server

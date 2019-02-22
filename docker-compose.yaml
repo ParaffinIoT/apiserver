@@ -16,7 +16,7 @@ services:
           - "127.0.0.1:5000:5000"
         environment:
           NODE_ENV: production
-          PROCESS_TYPE: api
+          PROCESS_TYPE: parse-server
           PORT: 5000
         volumes:
           - .:/app

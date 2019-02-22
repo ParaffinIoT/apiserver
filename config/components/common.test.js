@@ -42,7 +42,9 @@ describe('Common Component Test', () => {
       'PARSE_MOUNT', // eslint disable
       'ALLOW_INSECURE_HTTP',
       'DASHBOARD_USER',
-      'DASHOBOARD_PASS'
+      'DASHOBOARD_PASS',
+      "LOGGER_ENABLE",
+      "LOG_LEVEL"
     ])
   })
 })

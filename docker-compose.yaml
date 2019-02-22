@@ -6,7 +6,7 @@ services:
         container_name: db
         ports:
           - "127.0.0.1:27017:27017"
-    gateway:
+    parse-server:
         build:
           context: .
           dockerfile: Dockerfile

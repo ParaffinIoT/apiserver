@@ -1,26 +1,18 @@
 FROM node:latest
 
-RUN mkdir parse
+FROM mongo:latest
 
-ADD . /parse
-WORKDIR /parse
-RUN npm install
+ENV ROOTPATH=/app
 
-ENV APP_ID setYourAppId
-ENV MASTER_KEY setYourMasterKey
-ENV DATABASE_URI setMongoDBURI
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
 
-# Optional (default : 'parse/cloud/main.js')
-# ENV CLOUD_CODE_MAIN cloudCodePath
+WORKDIR $ROOTPATH
 
-# Optional (default : '/api')
-# ENV PARSE_MOUNT mountPath
+COPY package*.json ./
 
-EXPOSE 1337
+RUN npm ci 
 
-# Uncomment if you want to access cloud code outside of your container
-# A main.js file must be present, if not Parse will not start
+COPY . .
 
-# VOLUME /parse/cloud               
-
-CMD [ "npm", "start" ]
+USER  node

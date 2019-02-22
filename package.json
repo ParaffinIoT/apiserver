@@ -9,16 +9,18 @@
   },
   "license": "MIT",
   "dependencies": {
+    "bunyan": "1.8.12",
     "dotenv": "6.1.0",
     "express": "4.16.3",
     "joi": "13.7.0",
     "kerberos": "1.0.0",
+    "morgan": "1.9.1",
     "parse": "2.1.0",
     "parse-dashboard": "1.2.0",
     "parse-server": "3.0.0"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "PROCESS_TYPE=parse-server node index.js",
     "prepush": "npm run lint",
     "prettier": "prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write './{,!(node_modules)/**}/*.js'",
     "lint": "# Run lint and fix \n\t standard --verbose  --fix | snazzy",

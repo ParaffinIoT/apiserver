@@ -1,7 +1,5 @@
 FROM node:latest
 
-FROM mongo:latest
-
 ENV ROOTPATH=/app
 
 ARG NODE_ENV=production
@@ -9,9 +7,9 @@ ENV NODE_ENV=${NODE_ENV}
 
 WORKDIR $ROOTPATH
 
-COPY package*.json ./
+COPY package.json .
 
-RUN npm ci 
+RUN npm install
 
 COPY . .
 

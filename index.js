@@ -122,7 +122,7 @@ app.get('/test', function (req, res) {
 
 // Serve the Parse API on the /parse URL prefix
 app.use('/api', api)
-.use(morgan("combined"))
+  .use(morgan('combined'))
 
 const port = config('PORT')
 const httpServer = require('http').createServer(app)

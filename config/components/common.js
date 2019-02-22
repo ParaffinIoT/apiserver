@@ -18,9 +18,7 @@ const envVarsSchema = joi
     PARSE_MOUNT: joi.string().required(), // eslint disable
     ALLOW_INSECURE_HTTP: joi.boolean().default(true),
     DASHBOARD_USER: joi.string().required(),
-    DASHOBOARD_PASS: joi.string().required(),
-    LOGGER_ENABLE: joi.boolean().default(true),
-    LOG_LEVEL: joi.string().default("info")
+    DASHOBOARD_PASS: joi.string().required()
   })
   .unknown()
 
@@ -46,7 +44,5 @@ module.exports = {
   PARSE_MOUNT: env.PARSE_MOUNT,
   ALLOW_INSECURE_HTTP: env.ALLOW_INSECURE_HTTP,
   DASHBOARD_USER: env.DASHBOARD_USER,
-  DASHOBOARD_PASS: env.DASHOBOARD_PASS,
-  LOGGER_ENABLE: env.LOGGER_ENABLE,
-  LOG_LEVEL: env.LOG_LEVEL
+  DASHOBOARD_PASS: env.DASHOBOARD_PASS
 }

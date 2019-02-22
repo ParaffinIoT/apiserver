@@ -12,7 +12,8 @@ describe('Logger Component', () => {
 
   it('should return logger envs', () => {
     expect(require(componentPath)).to.have.keys([
-      'LOG_LEVEL'
+      'LOG_LEVEL',
+      'LOGGER_ENABLE'
     ])
   })
 })

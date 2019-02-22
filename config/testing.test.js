@@ -51,7 +51,8 @@ describe('Testing  Envs', () => {
       'DB_URL',
       'BROKER_IP',
       'PORT',
-      'LOG_LEVEL'
+      'LOG_LEVEL',
+      'LOGGER_ENABLE'
     ])
   })
 })

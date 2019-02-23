@@ -14,3 +14,4 @@ RUN npm install
 COPY . .
 
 USER  node
+

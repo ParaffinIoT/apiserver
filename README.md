@@ -1,6 +1,6 @@
 # Paraffin API Server 
 
-[![Build Status](https://travis-ci.org/ParaffinIoT/apiserver.svg?branch=dev)](https://travis-ci.com/ParaffinIoT/apiserver)
+[![Build Status](https://travis-ci.org/ParaffinIoT/apiserver.svg?branch=dev)](https://travis-ci.com/ParaffinIoT/apiserver) [![Greenkeeper badge](https://badges.greenkeeper.io/ParaffinIoT/apiserver.svg)](https://greenkeeper.io/)
 
 Paraffin api server using the [parse-server](https://github.com/ParsePlatform/parse-server) module on Express.
 

@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:8.11.3
 
 ENV ROOTPATH=/app
 
@@ -14,3 +14,6 @@ RUN npm install
 COPY . .
 
 USER  node
+
+
+

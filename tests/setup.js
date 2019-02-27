@@ -12,7 +12,7 @@ before(() => {
 })
 
 beforeEach(function beforeEach () {
-  this.sandbox = sinon.sandbox.create()
+  this.sandbox = sinon.createSandbox()
   nock.cleanAll()
 })
 

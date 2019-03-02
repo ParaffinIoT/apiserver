@@ -94,7 +94,7 @@ const dashboard = new ParseDashboard(
       }
     ]
   },
-  allowInsecureHTTP
+  { allowInsecureHTTP }
 )
 
 const app = express()

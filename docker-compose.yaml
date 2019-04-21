@@ -1,5 +1,5 @@
-
-version: '3'
+---
+version: '3.3'
 services:
     mongodb:
         image: mongo:3.6.6
@@ -9,6 +9,11 @@ services:
     parse-server:
         build:
           context: .
+          labels:
+            - "Project.Name=Paraffin"
+            - "Module.Name=apiserver"
+            - "version=0.01"
+            - "maintainer=rafiee1001@gmail.com"
           dockerfile: Dockerfile
         container_name: parser-server
         command: node index.js
@@ -21,5 +26,4 @@ services:
         volumes:
           - .:/app
           - /app/node_modules
-
         env_file: .env

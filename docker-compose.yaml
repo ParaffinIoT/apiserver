@@ -1,4 +1,4 @@
-
+---
 version: '3'
 services:
     mongodb:
@@ -21,5 +21,9 @@ services:
         volumes:
           - .:/app
           - /app/node_modules
-
         env_file: .env
+        labels:
+          - "Project.Name=Paraffin"
+          - "Module.Name=apiserver"
+          - "version=0.01"
+          - "maintainer=rafiee1001@gmail.com"

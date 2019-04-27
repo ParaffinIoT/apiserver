@@ -17,7 +17,7 @@
     "morgan": "1.9.1",
     "parse": "2.3.2",
     "parse-dashboard": "1.2.0",
-    "parse-server": "3.2.1"
+    "parse-server": "3.3.0"
   },
   "scripts": {
     "start": "PROCESS_TYPE=parse-server node index.js",

@@ -5,30 +5,13 @@ const config = require('../config')
 const brokerIP = config('BROKER_IP')
 
 Parse.Cloud.define('hello', async (request) => {
-  try {
-    console.log('Hello world, Peace be upon Jesus who will return with Mahdi')
-  } catch (error) {
-    throw error.message
-  }
+// some hell cloud function goes here
 })
 
 Parse.Cloud.define('auth', async request => {
-  // the params passed through the start request
   const params = request.params
-  // Headers from the request that triggered the job
-  // const headers = request.headers
-  // get the parse-server logger
   const log = request.log
-  const isMaster = request.master // if the function is run with masterKey
-  // console.log("Request:");
-  // console.log(request);
-  // console.log("headers:");
-  // console.log(JSON.stringify(headers));
-  // console.log("params:");
-  // console.log(JSON.stringify(params));
-  console.log('logs:')
-  console.log(JSON.stringify(log))
-
+  const isMaster = request.master
   if (!isMaster) {
     let es = {
       error: 'Masterkey is not valid',
@@ -49,14 +32,11 @@ Parse.Cloud.define('auth', async request => {
   const query = new Parse.Query(Thing)
   query.equalTo('clientId', params.id)
   const results = await query.find()
-  console.log('@@@@#$%%')
-  console.log(results[0].get('name'))
   if (results.length !== 1) {
     let e2 = {
       error: 'ClientId lookup failed',
       code: '403'
     }
-    console.log('Error: ' + e2)
     return e2
   }
 
@@ -86,7 +66,6 @@ Parse.Cloud.define('auth', async request => {
         error: 'Authentication failed',
         code: '203'
       }
-      console.log('Error: ' + e)
       return e
     }
   }
@@ -95,6 +74,5 @@ Parse.Cloud.define('auth', async request => {
     error: 'Unmatched information',
     code: '303'
   }
-  console.log('Error: ' + e3)
   return e3
 })

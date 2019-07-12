@@ -15,7 +15,7 @@
     "joi": "14.3.1",
     "kerberos": "1.1.2",
     "morgan": "1.9.1",
-    "parse": "2.3.2",
+    "parse": "2.5.1",
     "parse-dashboard": "1.2.0",
     "parse-server": "3.4.4"
   },

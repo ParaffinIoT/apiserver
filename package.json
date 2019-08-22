@@ -17,7 +17,7 @@
     "morgan": "1.9.1",
     "parse": "2.3.2",
     "parse-dashboard": "1.2.0",
-    "parse-server": "3.4.4"
+    "parse-server": "3.5.0"
   },
   "scripts": {
     "start": "PROCESS_TYPE=parse-server node index.js",
@@ -36,7 +36,7 @@
     "mocha": "6.1.4",
     "nock": "10.0.6",
     "prettier": "^1.14.3",
-    "sinon": "7.3.2",
+    "sinon": "7.4.0",
     "sinon-chai": "3.3.0",
     "snazzy": "8.0.0",
     "standard": "13.0.1"

@@ -16,7 +16,7 @@
     "kerberos": "1.1.2",
     "morgan": "1.9.1",
     "parse": "2.3.2",
-    "parse-dashboard": "1.2.0",
+    "parse-dashboard": "2.0.2",
     "parse-server": "3.7.2"
   },
   "scripts": {
